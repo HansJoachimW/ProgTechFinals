@@ -32,12 +32,12 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/AddMovieView"
+        android:id="@+id/AddClassView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Add Movie"
+        android:text="Add Class"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/BackButAddMov"
@@ -62,13 +62,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/TitleInLayout"
+                app:layout_constraintBottom_toTopOf="@+id/ClassnameLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/inputPoster"
+                    android:id="@+id/inputClassPhoto"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:background="#00000000"
@@ -76,7 +76,7 @@
             </androidx.cardview.widget.CardView>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TitleInLayout"
+                android:id="@+id/ClassnameLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -91,16 +91,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/cardView">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/TitleInEditText"
+                    android:id="@+id/ClassnameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Title"
+                    android:hint="Classname"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/RatingInputLayout"
+                android:id="@+id/AmountLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -110,20 +110,20 @@
                 app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/TitleInLayout"
-                app:layout_constraintStart_toStartOf="@+id/TitleInLayout"
-                app:layout_constraintTop_toBottomOf="@+id/TitleInLayout">
+                app:layout_constraintEnd_toEndOf="@+id/ClassnameLayout"
+                app:layout_constraintStart_toStartOf="@+id/ClassnameLayout"
+                app:layout_constraintTop_toBottomOf="@+id/ClassnameLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/RatingInputEditText"
+                    android:id="@+id/AmountEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Rating"
+                    android:hint="Amount of Students"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/GenreInputLayout"
+                android:id="@+id/MajorAddStudent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -133,20 +133,20 @@
                 app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/RatingInputLayout"
-                app:layout_constraintStart_toStartOf="@+id/RatingInputLayout"
-                app:layout_constraintTop_toBottomOf="@+id/RatingInputLayout">
+                app:layout_constraintEnd_toEndOf="@+id/AmountLayout"
+                app:layout_constraintStart_toStartOf="@+id/AmountLayout"
+                app:layout_constraintTop_toBottomOf="@+id/AmountLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/GenreInputEditText"
+                    android:id="@+id/MajorEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Genre"
+                    android:hint="Major"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ProdInputLayout"
+                android:id="@+id/UnivLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -156,20 +156,20 @@
                 app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/GenreInputLayout"
-                app:layout_constraintStart_toStartOf="@+id/GenreInputLayout"
-                app:layout_constraintTop_toBottomOf="@+id/GenreInputLayout">
+                app:layout_constraintEnd_toEndOf="@+id/MajorAddStudent"
+                app:layout_constraintStart_toStartOf="@+id/MajorAddStudent"
+                app:layout_constraintTop_toBottomOf="@+id/MajorAddStudent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ProdInputEditText"
+                    android:id="@+id/TeacherEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Production Company"
+                    android:hint="Teacher in Charge"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/SynopsisInputLayout"
+                android:id="@+id/AboutLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -179,15 +179,15 @@
                 app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/ProdInputLayout"
-                app:layout_constraintStart_toStartOf="@+id/ProdInputLayout"
-                app:layout_constraintTop_toBottomOf="@+id/ProdInputLayout">
+                app:layout_constraintEnd_toEndOf="@+id/UnivLayout"
+                app:layout_constraintStart_toStartOf="@+id/UnivLayout"
+                app:layout_constraintTop_toBottomOf="@+id/UnivLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/SynopsisInputEditText"
+                    android:id="@+id/inputAbout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Synopsis"
+                    android:hint="Description"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -206,7 +206,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/SynopsisInputLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/AboutLayout" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

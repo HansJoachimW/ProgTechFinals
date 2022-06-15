@@ -17,10 +17,10 @@ class ListMovieRVAdapter(val listMovie: ArrayList<Movie>, val cardListener: Card
         val binding = MovieCardBinding.bind(itemView)
 
         fun setData(data:Movie){
-            binding.MovieTitleView.text=data.title
+            binding.ClassNameText.text=data.classname
 
             if(!data.imageUri!!.isEmpty()){
-                binding.MovPosterView.setImageURI(Uri.parse(data.imageUri))
+                binding.ClassProfileCard.setImageURI(Uri.parse(data.imageUri))
             }
             itemView.setOnClickListener{
                 cardListener1.onCardClick(adapterPosition)

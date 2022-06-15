@@ -28,7 +28,7 @@ class MainHomeActivity : AppCompatActivity() {
             startActivity(myIntent)
         }
         viewBind.ProfileButtonHomepage.setOnClickListener {
-            val myIntent = Intent(this, RegisterActivity::class.java)
+            val myIntent = Intent(this, ProfileActivity::class.java)
             startActivity(myIntent)
         }
     }

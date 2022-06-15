@@ -14,13 +14,13 @@ import androidx.core.net.toUri
 import com.example.movielist.databinding.ActivityCreateBinding
 
 class CreateActivity : AppCompatActivity() {
-    private lateinit var tempMov:Movie
+    private lateinit var tempClass:Movie
     var tempUri:String =""
     private var position = -1
     private val GetResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
         if(it.resultCode == Activity.RESULT_OK){
             val uri = it.data?.data
-            binding.inputPoster.setImageURI(uri)
+            binding.inputClassPhoto.setImageURI(uri)
             if(uri!=null) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                     baseContext.getContentResolver().takePersistableUriPermission(
@@ -30,8 +30,6 @@ class CreateActivity : AppCompatActivity() {
                 }
                 tempUri = uri.toString()
             }
-
-            //GlobalVar.listDataMovie[position].imageUri = uri.toString()
         }
     }
     private lateinit var binding : ActivityCreateBinding
@@ -51,7 +49,7 @@ class CreateActivity : AppCompatActivity() {
     private fun GetIntent(){
         position = intent.getIntExtra("position",-1)
         if(position!=-1){
-            binding.AddMovieView.setText("Edit Movie")
+            binding.AddClassView.setText("Edit Movie")
             binding.SubmitAddStudent.setText("Save")
             val tempMov = GlobalVar.listDataMovie[position]
             Display(tempMov)
@@ -59,33 +57,33 @@ class CreateActivity : AppCompatActivity() {
     }
 
     private fun Display(tempMov:Movie?){
-        binding.TitleInLayout.editText?.setText((tempMov?.title))
-        binding.RatingInputLayout.editText?.setText((tempMov?.rating))
-        binding.GenreInputLayout.editText?.setText((tempMov?.genre))
-        binding.ProdInputLayout.editText?.setText((tempMov?.prodComp))
-        binding.SynopsisInputLayout.editText?.setText((tempMov?.synopsis))
-        binding.inputPoster.setImageURI(Uri.parse(tempMov?.imageUri))
+        binding.ClassnameLayout.editText?.setText((tempMov?.classname))
+        binding.AmountLayout.editText?.setText((tempMov?.amount))
+        binding.MajorLayout.editText?.setText((tempMov?.major))
+        binding.TeacherLayout.editText?.setText((tempMov?.teacher))
+        binding.DescriptionLayout.editText?.setText((tempMov?.description))
+        binding.inputClassPhoto.setImageURI(Uri.parse(tempMov?.imageUri))
 
     }
 
     private fun Listener(){
         binding.SubmitAddStudent.setOnClickListener{
-            var title = binding.TitleInLayout.editText?.text.toString().trim()
-            var rating = binding.RatingInputLayout.editText?.text.toString().trim()
-            var genre = binding.GenreInputLayout.editText?.text.toString().trim()
-            var prodcom = binding.ProdInputLayout.editText?.text.toString().trim()
-            var synopsis = binding.SynopsisInputLayout.editText?.text.toString().trim()
+            var classname = binding.ClassnameLayout.editText?.text.toString().trim()
+            var amount = binding.AmountLayout.editText?.text.toString().trim()
+            var major = binding.MajorLayout.editText?.text.toString().trim()
+            var teacher = binding.TeacherLayout.editText?.text.toString().trim()
+            var description = binding.DescriptionLayout.editText?.text.toString().trim()
 
-            tempMov = Movie(title,rating,genre,prodcom,synopsis)
+            tempClass = Movie(classname,amount,major,teacher,description)
             checker()
         }
 
         binding.BackButAddMov.setOnClickListener{
-            val myIntent = Intent(this,HomeActivity::class.java)
+            val myIntent = Intent(this, HomeActivity::class.java)
             startActivity(myIntent)
         }
 
-        binding.inputPoster.setOnClickListener{
+        binding.inputClassPhoto.setOnClickListener{
             val myIntent = Intent(Intent.ACTION_OPEN_DOCUMENT)
             myIntent.type="image/*"
             GetResult.launch(myIntent)
@@ -95,78 +93,78 @@ class CreateActivity : AppCompatActivity() {
 
     private fun checker(){
         var isCompleted:Boolean = true
-        if(tempMov.title!!.isEmpty()){
-            binding.TitleInLayout.error = "Title harus diisi"
+        if(tempClass.classname!!.isEmpty()){
+            binding.ClassnameLayout.error = "Nama kelas harus diisi"
             isCompleted = false
         }else{
-            binding.TitleInLayout.error = ""
+            binding.ClassnameLayout.error = ""
         }
 
-        if(tempMov.rating!!.isEmpty()){
-            binding.RatingInputLayout.error = "Rating harus diisi 1-10"
+        if(tempClass.amount!!.isEmpty()){
+            binding.AmountLayout.error = "Jumlah mahasiswa harus diisi 1-100"
             isCompleted=false
-        }else if(tempMov.rating!!.contains(".*[A-Z].*".toRegex())){
-            binding.RatingInputLayout.error = "Rating tidak boleh ada huruf"
+        }else if(tempClass.amount!!.contains(".*[A-Z].*".toRegex())){
+            binding.AmountLayout.error = "Jumlah mahasiswa tidak boleh ada huruf"
             isCompleted=false
-        }else if(tempMov.rating!!.contains(".*[a-z].*".toRegex())){
-            binding.RatingInputLayout.error = "Rating tidak boleh ada huruf"
+        }else if(tempClass.amount!!.contains(".*[a-z].*".toRegex())){
+            binding.AmountLayout.error = "Jumlah mahasiswa tidak boleh ada huruf"
             isCompleted=false
-        }else if(tempMov.rating!!.contains(".*[0-9].*".toRegex())){
-            if(tempMov.rating!!.toInt()>100) {
-                binding.RatingInputLayout.error = "Rating harus 1-10"
+        }else if(tempClass.amount!!.contains(".*[0-9].*".toRegex())){
+            if(tempClass.amount!!.toInt()>100) {
+                binding.AmountLayout.error = "Jumlah mahasiswa harus 1-100"
                 isCompleted = false
             }
             else {
-                binding.RatingInputLayout.error = ""
+                binding.AmountLayout.error = ""
             }
         }
         else{
-            binding.RatingInputLayout.error = "Rating tidak boleh ada simbol"
+            binding.AmountLayout.error = "Jumlah mahasiswa tidak boleh ada simbol"
             isCompleted=false
         }
 
-        if(tempMov.genre!!.isEmpty()){
-            binding.GenreInputLayout.error = "Genre harus diisi"
+        if(tempClass.major!!.isEmpty()){
+            binding.MajorLayout.error = "Major harus diisi"
             isCompleted=false
         }else{
-            binding.GenreInputLayout.error = ""
+            binding.MajorLayout.error = ""
         }
 
-        if(tempMov.prodComp!!.isEmpty()){
-            binding.ProdInputLayout.error = "Production Company harus diisi"
+        if(tempClass.teacher!!.isEmpty()){
+            binding.TeacherLayout.error = "Nama guru harus diisi"
             isCompleted=false
         }else{
-            binding.ProdInputLayout.error = ""
+            binding.TeacherLayout.error = ""
         }
 
-        if(tempMov.synopsis!!.isEmpty()){
-            binding.SynopsisInputLayout.error = "Synopsis harus diisi"
+        if(tempClass.description!!.isEmpty()){
+            binding.DescriptionLayout.error = "Deskripsi kelas harus diisi"
             isCompleted=false
         }else{
-            binding.SynopsisInputLayout.error = ""
+            binding.DescriptionLayout.error = ""
         }
 
         if(isCompleted){
             if(position==-1){
-                tempMov.imageUri= tempUri
-                GlobalVar.listDataMovie.add(tempMov)
-                Toast.makeText(this, "Movie Successfully Added", Toast.LENGTH_SHORT).show()
-                val myIntent = Intent(this,HomeActivity::class.java)
+                tempClass.imageUri= tempUri
+                GlobalVar.listDataMovie.add(tempClass)
+                Toast.makeText(this, "Class Successfully Added", Toast.LENGTH_SHORT).show()
+                val myIntent = Intent(this, HomeActivity::class.java)
                 startActivity(myIntent)
             }
             else{
                 if(tempUri==GlobalVar.listDataMovie[position].imageUri) {
-                    tempMov.imageUri = GlobalVar.listDataMovie[position].imageUri
+                    tempClass.imageUri = GlobalVar.listDataMovie[position].imageUri
                 }
                 else if(tempUri==""){
-                    tempMov.imageUri = GlobalVar.listDataMovie[position].imageUri
+                    tempClass.imageUri = GlobalVar.listDataMovie[position].imageUri
                 }
                 else{
-                    tempMov.imageUri = tempUri
+                    tempClass.imageUri = tempUri
                 }
-                GlobalVar.listDataMovie[position]=tempMov
-                Toast.makeText(this, "Movie Successfully Edited", Toast.LENGTH_SHORT).show()
-                val myIntent = Intent(this,HomeActivity::class.java)
+                GlobalVar.listDataMovie[position]=tempClass
+                Toast.makeText(this, "Class Successfully Edited", Toast.LENGTH_SHORT).show()
+                val myIntent = Intent(this, HomeActivity::class.java)
                 startActivity(myIntent)
             }
             finish()

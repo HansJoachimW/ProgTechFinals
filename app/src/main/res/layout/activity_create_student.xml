@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/TitleAddStudent"
+                app:layout_constraintBottom_toTopOf="@+id/NameAddStudent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -76,7 +76,7 @@
             </androidx.cardview.widget.CardView>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TitleAddStudent"
+                android:id="@+id/NameAddStudent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -100,7 +100,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/RatingAddStudent"
+                android:id="@+id/AgeAddStudent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -110,9 +110,9 @@
                 app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/TitleAddStudent"
-                app:layout_constraintStart_toStartOf="@+id/TitleAddStudent"
-                app:layout_constraintTop_toBottomOf="@+id/TitleAddStudent">
+                app:layout_constraintEnd_toEndOf="@+id/NameAddStudent"
+                app:layout_constraintStart_toStartOf="@+id/NameAddStudent"
+                app:layout_constraintTop_toBottomOf="@+id/NameAddStudent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputAge"
@@ -123,7 +123,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/GenreInputLayout"
+                android:id="@+id/MajorAddStudent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -133,9 +133,9 @@
                 app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/RatingAddStudent"
-                app:layout_constraintStart_toStartOf="@+id/RatingAddStudent"
-                app:layout_constraintTop_toBottomOf="@+id/RatingAddStudent">
+                app:layout_constraintEnd_toEndOf="@+id/AgeAddStudent"
+                app:layout_constraintStart_toStartOf="@+id/AgeAddStudent"
+                app:layout_constraintTop_toBottomOf="@+id/AgeAddStudent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputJurusan"
@@ -146,7 +146,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/ProdInputLayout"
+                android:id="@+id/UnivLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -156,9 +156,9 @@
                 app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/GenreInputLayout"
-                app:layout_constraintStart_toStartOf="@+id/GenreInputLayout"
-                app:layout_constraintTop_toBottomOf="@+id/GenreInputLayout">
+                app:layout_constraintEnd_toEndOf="@+id/MajorAddStudent"
+                app:layout_constraintStart_toStartOf="@+id/MajorAddStudent"
+                app:layout_constraintTop_toBottomOf="@+id/MajorAddStudent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputUniv"
@@ -169,7 +169,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/SynopsisInputLayout"
+                android:id="@+id/AboutLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -179,12 +179,12 @@
                 app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/ProdInputLayout"
-                app:layout_constraintStart_toStartOf="@+id/ProdInputLayout"
-                app:layout_constraintTop_toBottomOf="@+id/ProdInputLayout">
+                app:layout_constraintEnd_toEndOf="@+id/UnivLayout"
+                app:layout_constraintStart_toStartOf="@+id/UnivLayout"
+                app:layout_constraintTop_toBottomOf="@+id/UnivLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/SynopsisInputEditText"
+                    android:id="@+id/inputAbout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="About Class"
@@ -206,7 +206,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/SynopsisInputLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/AboutLayout" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -2,6 +2,7 @@ package com.example.movielist
 
 import Adapter.ListStudentRVAdapter
 import Database.GlobalVar
+import Interface.CardListener
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +11,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movielist.databinding.ActivityStudentHomeBinding
 
-class StudentHome : AppCompatActivity() {
+class StudentHome : AppCompatActivity(), CardListener {
     private lateinit var binding : ActivityStudentHomeBinding
     private val adapter = ListStudentRVAdapter(GlobalVar.listDataStudent, this)
 
@@ -27,17 +28,17 @@ class StudentHome : AppCompatActivity() {
 
     }
     private fun hidden(){
-        if(GlobalVar.listDataMovie.isNotEmpty()){
-            binding.middletag.isInvisible = true
+        if(GlobalVar.listDataStudent.isNotEmpty()){
+            binding.StudentListTag.isInvisible = true
         }
-        else if(GlobalVar.listDataMovie.isNotEmpty())
+        else if(GlobalVar.listDataStudent.isNotEmpty())
         {
-            binding.middletag.isVisible = true
+            binding.StudentListTag.isVisible = true
         }
     }
     private fun listener(){
-        binding.addFAB.setOnClickListener {
-            val myIntent = Intent(this, CreateActivity::class.java)
+        binding.addStudentTag.setOnClickListener {
+            val myIntent = Intent(this, CreateStudentActivity::class.java)
             startActivity(myIntent)
         }
     }
@@ -49,13 +50,13 @@ class StudentHome : AppCompatActivity() {
 
     private fun setupRecyclerView(){
         val layoutManager = GridLayoutManager(baseContext,2)
-        binding.listMovRV.layoutManager= layoutManager //Set layout
-        binding.listMovRV.adapter=adapter //Set adapter
+        binding.listStudentRV.layoutManager= layoutManager //Set layout
+        binding.listStudentRV.adapter=adapter //Set adapter
     }
 
 
     override fun onCardClick(position: Int) {
-        val myIntent = Intent(this, DetailActivity::class.java).apply{
+        val myIntent = Intent(this, DetailStudentActivity::class.java).apply{
             putExtra("position" , position)
         }
 

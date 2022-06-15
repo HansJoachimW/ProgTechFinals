@@ -9,19 +9,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movielist.R
-import com.example.movielist.databinding.MovieCardBinding
+import com.example.movielist.databinding.StudentCardBinding
 
 class ListStudentRVAdapter(val listStudent: ArrayList<Student>, val cardListener: CardListener):
     RecyclerView.Adapter<ListStudentRVAdapter.viewHolder>() {
 
     class viewHolder(itemView: View, val cardListener1: CardListener): RecyclerView.ViewHolder(itemView) {
-        val binding = MovieCardBinding.bind(itemView)
+        val binding = StudentCardBinding.bind(itemView)
 
         fun setData(data:Student){
-            binding.MovieTitleView.text=data.name
+            binding.StudentNameText.text=data.name
 
             if(!data.imageUri!!.isEmpty()){
-                binding.MovPosterView.setImageURI(Uri.parse(data.imageUri))
+                binding.StudentProfileCard.setImageURI(Uri.parse(data.imageUri))
             }
             itemView.setOnClickListener{
                 cardListener1.onCardClick(adapterPosition)

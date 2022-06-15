@@ -4,11 +4,11 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Movie(
-    var title:String?,
-    var rating: String?,
-    var genre:String?,
-    var prodComp:String?,
-    var synopsis:String?):Parcelable {
+    var classname:String?,
+    var amount: String?,
+    var major:String?,
+    var teacher:String?,
+    var description:String?):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
@@ -20,11 +20,11 @@ data class Movie(
     var imageUri:String?=""
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(title)
-        parcel.writeString(rating)
-        parcel.writeString(genre)
-        parcel.writeString(prodComp)
-        parcel.writeString(synopsis)
+        parcel.writeString(classname)
+        parcel.writeString(amount)
+        parcel.writeString(major)
+        parcel.writeString(teacher)
+        parcel.writeString(description)
     }
 
 
