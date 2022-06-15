@@ -40,7 +40,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/UsernameLoginLayout"
+                android:id="@+id/EmailLoginLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -55,10 +55,10 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/UsernameLoginEditText"
+                    android:id="@+id/EmailLoginEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="enter username here..." />
+                    android:hint="enter email here..." />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -72,9 +72,9 @@
                 app:boxCornerRadiusBottomStart="5dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/UsernameLoginLayout"
-                app:layout_constraintStart_toStartOf="@+id/UsernameLoginLayout"
-                app:layout_constraintTop_toBottomOf="@+id/UsernameLoginLayout">
+                app:layout_constraintEnd_toEndOf="@+id/EmailLoginLayout"
+                app:layout_constraintStart_toStartOf="@+id/EmailLoginLayout"
+                app:layout_constraintTop_toBottomOf="@+id/EmailLoginLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/PasswordLoginEditText"

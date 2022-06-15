@@ -19,6 +19,7 @@ import com.example.movielist.databinding.ActivityHomeBinding
 class HomeActivity : AppCompatActivity(), CardListener {
     private lateinit var binding : ActivityHomeBinding
     private val adapter = ListMovieRVAdapter(GlobalVar.listDataMovie, this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)

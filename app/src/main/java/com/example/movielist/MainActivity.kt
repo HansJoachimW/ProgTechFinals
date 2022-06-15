@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         CheckPermissions()
         Handler().postDelayed({
-            val myIntent = Intent(this@MainActivity , HomeActivity::class.java)
+            val myIntent = Intent(this@MainActivity , RegisterActivity::class.java)
             startActivity(myIntent)
             finish()
         },3000)

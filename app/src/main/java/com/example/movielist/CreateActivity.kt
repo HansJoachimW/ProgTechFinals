@@ -52,7 +52,7 @@ class CreateActivity : AppCompatActivity() {
         position = intent.getIntExtra("position",-1)
         if(position!=-1){
             binding.AddMovieView.setText("Edit Movie")
-            binding.SubmitAddBut.setText("Save")
+            binding.SubmitAddStudent.setText("Save")
             val tempMov = GlobalVar.listDataMovie[position]
             Display(tempMov)
         }
@@ -69,7 +69,7 @@ class CreateActivity : AppCompatActivity() {
     }
 
     private fun Listener(){
-        binding.SubmitAddBut.setOnClickListener{
+        binding.SubmitAddStudent.setOnClickListener{
             var title = binding.TitleInLayout.editText?.text.toString().trim()
             var rating = binding.RatingInputLayout.editText?.text.toString().trim()
             var genre = binding.GenreInputLayout.editText?.text.toString().trim()

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "711929681790",
+    "project_id": "auth-ec4c8",
+    "storage_bucket": "auth-ec4c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711929681790:android:5ee153938585880a05452f",
+        "android_client_info": {
+          "package_name": "com.example.movielist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711929681790-jkvk0i7kltl2k0pqii7svm6icm1vrpbf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJwXEThTVXEMYbjnGNFPMBa_TqfRuk6Mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711929681790-jkvk0i7kltl2k0pqii7svm6icm1vrpbf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
