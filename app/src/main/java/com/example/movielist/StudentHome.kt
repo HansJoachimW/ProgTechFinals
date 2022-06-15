@@ -29,16 +29,20 @@ class StudentHome : AppCompatActivity(), CardListener {
     }
     private fun hidden(){
         if(GlobalVar.listDataStudent.isNotEmpty()){
-            binding.StudentListTag.isInvisible = true
+            binding.addStudentTag.isInvisible = true
         }
         else if(GlobalVar.listDataStudent.isNotEmpty())
         {
-            binding.StudentListTag.isVisible = true
+            binding.addStudentTag.isVisible = true
         }
     }
     private fun listener(){
-        binding.addStudentTag.setOnClickListener {
+        binding.addStudentList.setOnClickListener {
             val myIntent = Intent(this, CreateStudentActivity::class.java)
+            startActivity(myIntent)
+        }
+        binding.BackButtonStudentHome.setOnClickListener {
+            val myIntent = Intent(this, MainHomeActivity::class.java)
             startActivity(myIntent)
         }
     }

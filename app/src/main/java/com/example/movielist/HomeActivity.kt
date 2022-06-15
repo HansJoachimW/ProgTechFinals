@@ -41,6 +41,10 @@ class HomeActivity : AppCompatActivity(), CardListener {
             val myIntent = Intent(this, CreateActivity::class.java)
             startActivity(myIntent)
         }
+        binding.BackButtonClassHome.setOnClickListener {
+            val myIntent = Intent(this, MainHomeActivity::class.java)
+            startActivity(myIntent)
+        }
     }
 
     override fun onResume() {

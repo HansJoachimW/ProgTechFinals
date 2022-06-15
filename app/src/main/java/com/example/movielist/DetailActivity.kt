@@ -4,13 +4,10 @@ import Database.GlobalVar.Companion.listDataMovie
 import Model.Movie
 import android.content.Intent
 import android.net.Uri
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.movielist.databinding.ActivityCreateBinding
 import com.example.movielist.databinding.ActivityDetailBinding
-import com.example.movielist.databinding.MovieCardBinding
 
 class DetailActivity : AppCompatActivity() {
     private var position = -1
@@ -26,42 +23,44 @@ class DetailActivity : AppCompatActivity() {
 
     }
 
-    private fun listener(){
-        binding.BackButMovDet.setOnClickListener{
-            val myIntent = Intent(this,HomeActivity::class.java)
+    private fun listener() {
+        binding.BackButMovDet.setOnClickListener {
+            val myIntent = Intent(this, HomeActivity::class.java)
             startActivity(myIntent)
         }
-        binding.DeleteBut.setOnClickListener{
+        binding.DeleteBut.setOnClickListener {
             listDataMovie.removeAt(position)
             Toast.makeText(this, "Delete Success", Toast.LENGTH_SHORT).show()
-            val myIntent = Intent(this,HomeActivity::class.java)
+            val myIntent = Intent(this, HomeActivity::class.java)
             startActivity(myIntent)
         }
-        binding.EditBut.setOnClickListener{
-            val myIntent = Intent(this,CreateActivity::class.java).apply{
-                putExtra("position",position)
-
+        binding.EditBut.setOnClickListener {
+            val myIntent = Intent(this, CreateActivity::class.java).apply {
+                putExtra("position", position)
             }
             startActivity(myIntent)
         }
     }
-    private fun GetIntent(){
+
+    private fun GetIntent() {
         position = intent.getIntExtra("position", -1)
         val movie = listDataMovie[position]
         Display(movie)
     }
-    private fun Display(movie: Movie){
-        binding.MovTitleTextView.text = movie.title
-        binding.RatingTextView.text = movie.rating
-        binding.GenreTextView.text = movie.genre
-        binding.ProdCompTextView.text = movie.prodComp
-        binding.SynopsisTextView.text = movie.synopsis
+
+    private fun Display(movie: Movie) {
+        binding.ClassTitleTextView.text = movie.classname
+        binding.AmountTextView.text = movie.amount
+        binding.MajorTextView.text = movie.major
+        binding.TeacherTextView.text = movie.teacher
+        binding.DescriptionTextView.text = movie.description
         var temp = Uri.parse(movie.imageUri)
 
         if (movie.imageUri!!.isNotEmpty()) {
-            binding.previewPoster.setImageURI(Uri.parse(movie.imageUri))
+            binding.previewPoster.setImageURI(temp)
         }
     }
+
     override fun onResume() {
         super.onResume()
         val movie = listDataMovie[position]

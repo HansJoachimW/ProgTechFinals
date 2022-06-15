@@ -31,12 +31,12 @@
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/MovieDetailText"
+        android:id="@+id/ClassDetailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Movie Detail"
+        android:text="Class Detail"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/BackButMovDet"
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/previewPosterCV"
+                android:id="@+id/previewPosterClass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -74,107 +74,107 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/MovTitleTextView"
+                android:id="@+id/ClassTitleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="32dp"
-                android:text="MOVIE TITLE"
+                android:text="Class Name"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/previewPosterCV"
+                app:layout_constraintStart_toEndOf="@+id/previewPosterClass"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/AmountImageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="@+id/MovTitleTextView"
-                app:layout_constraintTop_toBottomOf="@+id/MovTitleTextView"
-                app:srcCompat="@android:drawable/btn_star" />
+                app:layout_constraintStart_toStartOf="@+id/ClassTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/ClassTitleTextView"
+                app:srcCompat="@drawable/profilebutton_foreground" />
 
             <TextView
-                android:id="@+id/RatingTextView"
+                android:id="@+id/AmountTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
                 android:text="10"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toBottomOf="@+id/MovTitleTextView" />
+                app:layout_constraintBottom_toBottomOf="@+id/AmountImageView"
+                app:layout_constraintStart_toEndOf="@+id/AmountImageView"
+                app:layout_constraintTop_toTopOf="@+id/AmountImageView" />
 
             <TextView
-                android:id="@+id/GenreTagView"
+                android:id="@+id/MajorTagView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Genre"
+                android:text="Major"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/imageView3"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintStart_toStartOf="@+id/AmountImageView"
+                app:layout_constraintTop_toBottomOf="@+id/AmountImageView" />
 
             <TextView
-                android:id="@+id/GenreTextView"
+                android:id="@+id/MajorTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Action"
+                android:text="IMT"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/GenreTagView"
-                app:layout_constraintTop_toBottomOf="@+id/GenreTagView" />
+                app:layout_constraintStart_toStartOf="@+id/MajorTagView"
+                app:layout_constraintTop_toBottomOf="@+id/MajorTagView" />
 
             <TextView
-                android:id="@+id/ProdCompTagView"
+                android:id="@+id/TeacherTagView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Production Company"
+                android:text="Teacher"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/GenreTextView"
-                app:layout_constraintTop_toBottomOf="@+id/GenreTextView" />
+                app:layout_constraintStart_toStartOf="@+id/MajorTextView"
+                app:layout_constraintTop_toBottomOf="@+id/MajorTextView" />
 
             <TextView
-                android:id="@+id/ProdCompTextView"
+                android:id="@+id/TeacherTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Disney"
+                android:text="Dr."
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/ProdCompTagView"
-                app:layout_constraintTop_toBottomOf="@+id/ProdCompTagView" />
+                app:layout_constraintStart_toStartOf="@+id/TeacherTagView"
+                app:layout_constraintTop_toBottomOf="@+id/TeacherTagView" />
 
             <TextView
-                android:id="@+id/SynopsisTagView"
+                android:id="@+id/DescriptionTagView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Synopsis"
+                android:text="Description"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/previewPosterCV"
-                app:layout_constraintTop_toBottomOf="@+id/previewPosterCV" />
+                app:layout_constraintStart_toStartOf="@+id/previewPosterClass"
+                app:layout_constraintTop_toBottomOf="@+id/previewPosterClass" />
 
             <TextView
-                android:id="@+id/SynopsisTextView"
+                android:id="@+id/DescriptionTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/SynopsisTagView"
-                app:layout_constraintTop_toBottomOf="@+id/SynopsisTagView" />
+                app:layout_constraintStart_toStartOf="@+id/DescriptionTagView"
+                app:layout_constraintTop_toBottomOf="@+id/DescriptionTagView" />
 
             <Button
                 android:id="@+id/DeleteBut"
@@ -189,7 +189,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/SynopsisTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/DescriptionTextView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

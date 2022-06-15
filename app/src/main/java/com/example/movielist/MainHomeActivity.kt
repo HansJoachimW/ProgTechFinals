@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.movielist.databinding.ActivityLoginBinding
 import com.example.movielist.databinding.ActivityMainHomeBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class MainHomeActivity : AppCompatActivity() {
     private lateinit var viewBind: ActivityMainHomeBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,6 +17,7 @@ class MainHomeActivity : AppCompatActivity() {
         setContentView(viewBind.root)
 
         supportActionBar?.hide()
+        firebaseAuth = FirebaseAuth.getInstance()
         Listener()
     }
 
@@ -29,6 +32,11 @@ class MainHomeActivity : AppCompatActivity() {
         }
         viewBind.ProfileButtonHomepage.setOnClickListener {
             val myIntent = Intent(this, ProfileActivity::class.java)
+            startActivity(myIntent)
+        }
+        viewBind.BackButtonMainHome.setOnClickListener {
+            firebaseAuth.signOut()
+            val myIntent = Intent(this, LoginActivity::class.java)
             startActivity(myIntent)
         }
     }
