@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieList">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainHomeActivity"
             android:exported="false" />
         <activity

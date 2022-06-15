@@ -8,7 +8,7 @@
     tools:context=".HomeActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/homeToolbar"
+        android:id="@+id/ClassHomeToolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#2c2f33"
@@ -18,40 +18,52 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/MovieListTag"
+    <ImageButton
+        android:id="@+id/BackButtonClassHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Movie List"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_35"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/ClassListTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Classes"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/BackButtonClassHome"
+        app:layout_constraintStart_toEndOf="@+id/BackButtonClassHome"
+        app:layout_constraintTop_toTopOf="@+id/BackButtonClassHome" />
 
     <TextView
-        android:id="@+id/middletag"
+        android:id="@+id/addClassTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add a Movie"
+        android:text="Add Classes"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/listMovRV"
+        app:layout_constraintBottom_toBottomOf="@+id/listClassRV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeToolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/ClassHomeToolbar" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listMovRV"
+        android:id="@+id/listClassRV"
         android:layout_width="393dp"
         android:layout_height="673dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeToolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/ClassHomeToolbar" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addFAB"
+        android:id="@+id/addClassList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
