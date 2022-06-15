@@ -1,10 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentHome">
+    android:background="#2C2F33"
+    tools:context=".HomeActivity">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <androidx.appcompat.widget.Toolbar
+      android:id="@+id/studentHomeToolbar"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:background="#2c2f33"
+      android:minHeight="?attr/actionBarSize"
+      android:theme="?attr/actionBarTheme"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/StudentListTag"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:text="Student List"
+      android:textColor="#FFFFFF"
+      android:textSize="20sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/addStudentTag"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Add Student"
+      android:textColor="#FFFFFF"
+      app:layout_constraintBottom_toBottomOf="@+id/listStudentRV"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/studentHomeToolbar" />
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/listStudentRV"
+      android:layout_width="393dp"
+      android:layout_height="673dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/studentHomeToolbar" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/addStudentList"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="16dp"
+      android:layout_marginBottom="16dp"
+      android:clickable="true"
+      app:backgroundTint="#7289DA"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:srcCompat="@android:drawable/ic_input_add"
+      tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

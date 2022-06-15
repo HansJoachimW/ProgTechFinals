@@ -112,7 +112,7 @@ class CreateActivity : AppCompatActivity() {
             binding.RatingInputLayout.error = "Rating tidak boleh ada huruf"
             isCompleted=false
         }else if(tempMov.rating!!.contains(".*[0-9].*".toRegex())){
-            if(tempMov.rating!!.toInt()>10) {
+            if(tempMov.rating!!.toInt()>100) {
                 binding.RatingInputLayout.error = "Rating harus 1-10"
                 isCompleted = false
             }
