@@ -193,9 +193,9 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/SubmitAddBut"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:id="@+id/SubmitAddStudent"
+                android:layout_width="356dp"
+                android:layout_height="46dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
